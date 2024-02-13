@@ -100,9 +100,16 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias bambridge="cd ~/Documents/bambridge-accountants"
 alias programming="cd ~/Documents/programming"
 alias habitTracker="programming && habit-tracker-cli"
 alias goPractice="programming && go-crud-yourself"
+alias dataStructures="programming && data-structures"
 alias typingPractice="xdg-open https://monkeytype.com"
+
+# General util aliasies
 alias ls="ls -A --color=always"
+
+# Config Aliases
+alias xmobarCfg="nvim ~/.xmobarrc"
+alias xmonadCfg="nvim ~/.xmonad"
+alias nvimCfg="nvim ~/.config/nvim"
