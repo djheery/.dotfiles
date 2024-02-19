@@ -98,13 +98,16 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Aliases
+# Directory change Aliases
 
+alias devLog="nvim ~/Documents/devlog"
+alias bambridge="cd ~/Documents/bambridge-accountants"
 alias programming="cd ~/Documents/programming"
 alias habitTracker="programming && habit-tracker-cli"
 alias goPractice="programming && go-crud-yourself"
 alias dataStructures="programming && data-structures"
 alias typingPractice="xdg-open https://monkeytype.com"
+alias portfolio="programming && portfolio"
 
 # General util aliasies
 alias ls="ls -A --color=always"
