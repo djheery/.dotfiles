@@ -32,10 +32,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
     -- close focused window
-    , ((modm, xK_c     ), kill)
+    , ((modm .|. shiftMask, xK_c     ), kill)
 
     -- Firefox
     , ((modm, xK_f     ), spawn "firefox")
+
+    -- Spawn Slack
+    , ((modm, xK_s     ), spawn "slack") 
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
