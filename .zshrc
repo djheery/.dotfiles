@@ -108,6 +108,7 @@ alias goPractice="programming && go-crud-yourself"
 alias dataStructures="programming && data-structures"
 alias typingPractice="xdg-open https://monkeytype.com"
 alias portfolio="programming && portfolio"
+alias km="setxkbmap gb"
 
 # General util aliasies
 alias ls="ls -A --color=always"
@@ -116,3 +117,6 @@ alias ls="ls -A --color=always"
 alias xmobarCfg="nvim ~/.xmobarrc"
 alias xmonadCfg="nvim ~/.xmonad"
 alias nvimCfg="nvim ~/.config/nvim"
+
+# Turso
+export PATH="/home/danielheery/.turso:$PATH"
