@@ -109,6 +109,7 @@ alias dataStructures="programming && data-structures"
 alias typingPractice="xdg-open https://monkeytype.com"
 alias portfolio="programming && portfolio"
 alias km="setxkbmap gb"
+alias engagementLetter="bambridge && engagement-letter"
 
 # General util aliasies
 alias ls="ls -A --color=always"
