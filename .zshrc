@@ -110,6 +110,8 @@ alias typingPractice="xdg-open https://monkeytype.com"
 alias portfolio="programming && portfolio"
 alias km="setxkbmap gb"
 alias engagementLetter="bambridge && engagement-letter"
+alias custom-forms="~/Documents/custom-forms"
+alias file-router="programming && file-router"
 
 # General util aliasies
 alias ls="ls -A --color=always"
@@ -121,3 +123,6 @@ alias nvimCfg="nvim ~/.config/nvim"
 
 # Turso
 export PATH="/home/danielheery/.turso:$PATH"
+
+# Golang
+export PATH=$PATH:$(go env GOPATH)/bin
