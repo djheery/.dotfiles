@@ -112,6 +112,7 @@ alias km="setxkbmap gb"
 alias engagementLetter="bambridge && engagement-letter"
 alias custom-forms="~/Documents/custom-forms"
 alias file-router="programming && file-router"
+alias image-conv="programming && image-converter"; 
 
 # General util aliasies
 alias ls="ls -A --color=always"
