@@ -114,6 +114,7 @@ alias custom-forms="~/Documents/custom-forms"
 alias file-router="programming && file-router"
 alias image-conv="programming && image-converter" 
 alias portal="programming && bamb-portal-v2" 
+alias interpreters="programming && interpreters"
 
 # General util aliasies
 alias ls="ls -A --color=always"
