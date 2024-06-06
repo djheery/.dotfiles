@@ -115,6 +115,7 @@ alias file-router="programming && file-router"
 alias image-conv="programming && image-converter" 
 alias portal="programming && bamb-portal-v2" 
 alias interpreters="programming && interpreters"
+alias bacc-calc="bambridge && calculators"
 
 # General util aliasies
 alias ls="ls -A --color=always"
