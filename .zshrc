@@ -98,7 +98,25 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Function to set the prompt 
+
+set_prompt() {
+  if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then 
+    PROMPT="%B%F{green}→ %B%F{red}@%m (SSH)  %B%F{cyan}%1~ %b%F{white}"
+  else 
+    PROMPT="%B%F{green}%D{%d/%m %H:%M} %B%F{red}→ %B%F{magenta}@%m %B%F{cyan}%1~ %b%F{white}"
+  fi
+}
+
+set_prompt
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd set_prompt
+
+precmd_functions+=(set_prompt)
+
 # Directory change Aliases
+
 
 alias devLog="nvim ~/Documents/devlog"
 alias bambridge="cd ~/Documents/bambridge-accountants"
@@ -114,8 +132,11 @@ alias custom-forms="~/Documents/custom-forms"
 alias file-router="programming && file-router"
 alias image-conv="programming && image-converter" 
 alias portal="programming && bamb-portal-v2" 
-alias interpreters="programming && interpreters"
+alias interpreters="programming && interpreters && git pull"
 alias bacc-calc="bambridge && calculators"
+alias md_trs="programming && markdown-transpiler-go"
+alias plam_proto="programming && plamelio-prototype"
+alias bam_art = "bambridge && article-template"
 
 # General util aliasies
 alias ls="ls -A --color=always"
