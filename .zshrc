@@ -136,7 +136,7 @@ alias interpreters="programming && interpreters && git pull"
 alias bacc-calc="bambridge && calculators"
 alias md_trs="programming && markdown-transpiler-go"
 alias plam_proto="programming && plamelio-prototype"
-alias bam_art = "bambridge && article-template"
+alias bam_art= "bambridge && article-template"
 
 # General util aliasies
 alias ls="ls -A --color=always"
