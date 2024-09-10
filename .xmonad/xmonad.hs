@@ -2,7 +2,10 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import Graphics.X11.ExtraTypes.XF86
-import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.DynamicLog (statusBar, xmobarPP, xmobarColor, ppCurrent, wrap, ) 
+import XMonad.Util.EZConfig (additionalKeysP) 
+import Graphics.X11.Xlib (KeySym, KeyMask, xK_b)
+
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -15,8 +18,10 @@ myBorderWidth 	= 1
 myWorkspaces 	= ["1", "2", "3", "4", "5"]
 
 -- Border Colors (B = Normal, FB = Focus Border)
-myBColor	= "#403d52"
-myFBColor	= "#ebbcba"
+-- myBColor	= "#403d52"
+myBColor = "#000000"
+-- myFBColor	= "#ebbcba"
+myFBColor = "#666666"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -39,6 +44,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Spawn Slack
     , ((modm, xK_s     ), spawn "slack") 
+
+    -- Spawn Google Chrome 
+    , ((modm, xK_g     ), spawn "google-chrome-stable")
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -116,6 +124,7 @@ myBar = "xmobar"
 myPP = xmobarPP { ppCurrent = xmobarColor "429942" "" . wrap "|" "|" }
 
 -- Key Binding to toggle the gap for the bar
+-- toggleStructsKey :: XConfig 1 -> (KeyMask, KeySym)
 toggleStructsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- Defaults
@@ -131,6 +140,9 @@ defaults = def
 	}
 
 -- Setup
-main = xmonad =<< statusBar myBar myPP toggleStructsKey defaults
+-- include myBar after statusBar
+main :: IO ()
+main = xmonad defaults
+-- main = xmonad defaults
 
 
