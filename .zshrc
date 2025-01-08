@@ -137,6 +137,10 @@ alias bacc-calc="bambridge && calculators"
 alias md_trs="programming && markdown-transpiler-go"
 alias plam_proto="programming && plamelio-prototype"
 alias bam_art="bambridge && article-template"
+alias kiosk_dev="programming && pi_kiosk"
+alias kiosk_run="programming && pi_kiosk && ./run.sh"
+alias assembly_course="programming && assembly_course"
+alias dum_cli="programming && dummy-cli-tools"
 
 # General util aliasies
 alias ls="ls -A --color=always"
