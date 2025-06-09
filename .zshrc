@@ -115,6 +115,16 @@ add-zsh-hook chpwd set_prompt
 
 precmd_functions+=(set_prompt)
 
+fzf_ccd() {
+  local dir
+  dir=$(command ls | fzf-tmux) && cd "$dir"
+}
+
+fzf_cd() {
+  local dir
+  dir=$(find . -type d | fzf-tmux) && cd "$dir"
+}
+
 # Directory change Aliases
 
 
@@ -122,28 +132,33 @@ alias devLog="nvim ~/Documents/devlog"
 alias bambridge="cd ~/Documents/bambridge-accountants"
 alias programming="cd ~/Documents/programming"
 alias habitTracker="programming && habit-tracker-cli"
-alias goPractice="programming && go-crud-yourself"
 alias dataStructures="programming && data-structures"
 alias typingPractice="xdg-open https://monkeytype.com"
-alias portfolio="programming && portfolio"
 alias km="setxkbmap gb"
 alias engagementLetter="bambridge && engagement-letter"
 alias custom-forms="~/Documents/custom-forms"
 alias file-router="programming && file-router"
-alias image-conv="programming && image-converter" 
-alias portal="programming && bamb-portal-v2" 
-alias interpreters="programming && interpreters && git pull"
+alias interpreters="programming && interpreters"
 alias bacc-calc="bambridge && calculators"
 alias md_trs="programming && markdown-transpiler-go"
-alias plam_proto="programming && plamelio-prototype"
 alias bam_art="bambridge && article-template"
 alias kiosk_dev="programming && pi_kiosk"
 alias kiosk_run="programming && pi_kiosk && ./run.sh"
 alias assembly_course="programming && assembly_course"
-alias dum_cli="programming && dummy-cli-tools"
+alias dum_cli="programming && dumbcoreutils"
+alias codew="code . --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias nfzf="fzf | xargs nvim"
+alias proj_ideas="programming && cd project-ideas && nvim ."
+alias docs="~/Documents"
+alias pkgInfo="pacman -Qq | fzf --preview 'pacman -Qil {} | bat -fpl yml' --layout=reverse  --bind 'enter:execute(pacman -Qil {} | less)'" 
+alias plam="programming && ./plamelio/plamelio-seo"
+alias open_portal="programming && ./open-portal"
+# alias tmux="TERM=alacritty-256color tmux"
+
 
 # General util aliasies
 alias ls="ls -A --color=always"
+alias lt="exa -a --tree -L 1"
 
 # Config Aliases
 alias xmobarCfg="nvim ~/.xmobarrc"
@@ -155,3 +170,9 @@ export PATH="/home/danielheery/.turso:$PATH"
 
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# .local/bin
+export PATH="/home/danielheery/.local/bin:$PATH"
+
+# .config/scripts
+export PATH="/home/danielheery/.config/.dotfiles/scripts:$PATH"
